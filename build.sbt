@@ -64,6 +64,6 @@ lazy val root = (project in file("."))
       )
       Seq(f)
     },
-    publishMavenStyle := false,
+    publishTo := (if (isSnapshot.value) None else localStaging.value),
     licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0.html")),
   )
